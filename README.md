@@ -1,2 +1,2 @@
 # makingPython
-aprendiendo a programar en Python
+Sistema de Inventario en Django
