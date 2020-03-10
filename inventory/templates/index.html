@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<br />
+<div class="button-group">
+  <a href="{% url 'display_laptops'%}" class="btn btn-primary btn-md" role="button">Laptops</a>
+  <a href="{% url 'add_laptop'%}" class="btn btn-warning btn-sm" role="button">+</a>
+
+  <a href="{% url 'display_desktop'%}" class="btn btn-primary btn-md" role="button">Desktops</a>
+  <a href="{% url 'add_desktop'%}" class="btn btn-warning btn-sm" role="button">+</a>
+
+  <a href="{% url 'display_telefono'%}#" class="btn btn-primary btn-md" role="button">Telefonos</a>
+  <a href="{% url 'add_telefono'%}" class="btn btn-warning btn-sm" role="button">+</a>
+</div>
+
+<br />
+
+<h4>Vista Actual {{ header }}</h4>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Modelo</th>
+      <th>Precio</th>
+      <th>Estado</th>
+      <th>Comentario</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for items in items %}
+    <tr>
+      <td>{{ items.pk }}</td>
+      <td>{{ items.tipo }}</td>
+      <td>{{ items.precio }}</td>
+      <td>{{ items.estado }}</td>
+      <td>{{ items.comentario }}</td>
+    </tr>
+
+    {% endfor %}
+  </tbody>
+</table>
+
+</div>
+<br>
+<!-- <div class="container">
+  <form action="">
+    <div class="nav navbar-expand navbar-dark">
+      <label class="navbar-brand bg-dark" for="importe">Importe del Prestamo</label>
+      <input type="text" name="monto_prestamo" id="monto_prestamo" placeholder="Ingresar el importe del prestamo Gs."
+        value>
+      <a href="#" class="btn-group btn btn-primary btn-md" role="button">Calcular</a>
+      <br>
+    </div>
+    <br>
+    <div class="nav navbar-expand navbar-dark">
+      <label class="navbar-brand bg-dark" for="frecuencia">Frecuencia de Pagos</label>
+    </div>
+    <table class="table table-hover">
+      <tr>
+        <td>
+          <select name="frecuencia" id="frecuencia" disabled="disabled">
+            <option selected value="Elige la frecuencia de pago"></option>
+            <option value="dia">Diario</option>
+            <option value="semana">Semanal</option>
+            <option value="mes">1 mes</option>
+            <option value="3meses">3 Meses</option>
+            <option value="4meses">4 Meses</option>
+            <option value="6meses">6 Meses</option>
+            <option value="12meses">12 Meses</option>
+            <option value="18meses">18 Meses</option>
+            <option value="24meses">24 Meses</option>
+            <option value="36meses">36 Meses</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div> -->
+
+
+{% endblock %}
