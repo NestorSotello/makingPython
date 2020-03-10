@@ -1,3 +1,12 @@
 /.vscode
 
 db.sqlite3
+
+# git filter-branch --index-filter 
+# 'git rm --cached --ignore-unmatch path/to/mylarge_file' 
+# --tag-name-filter cat -- --all
+
+# filter-branch keeps backups too, so the size of the repo won't decrease immediately unless you expire the reflogs and garbage collect:
+
+# rm -Rf .git/refs/original       # careful
+# git gc --aggressive --prune=now # danger
